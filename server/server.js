@@ -1,8 +1,15 @@
 const express = require('express');
-
 const PORT = 3000;
-
 const app = express();
+
+//allows express to parse request bodies
+app.use(express.json());
+
+/**********************ROUTE HANDLING************************************ */
+
+app.use('/api/user', userRouter)
+
+app.use('/api/certificate', certificateRouter);
 
 /*******************404 ERROR HANDLER************************************* */
 app.use((req, res) => {
