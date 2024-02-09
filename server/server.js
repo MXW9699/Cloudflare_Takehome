@@ -4,6 +4,11 @@ const PORT = 3000;
 
 const app = express();
 
+/*******************404 ERROR HANDLER************************************* */
+app.use((req, res) => {
+  return res.status(404).send('Endpoint not found');
+});
+
 /******************GLOBAL ERROR HANDLER********************************** */
 app.use((err, req, res, next) => {
   const defaultErr = {
