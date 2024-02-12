@@ -16,7 +16,7 @@ Your solution must support:
 
 
 [X] Listing all of a Customer’s Active Certificates
-`GET /api/user/{user_id}/active`
+`GET /api/user/{user_id}?active=true`
 
 [X] Activating/Deactivating Certificates. If a certificate is either activated or de-activated, add the ability to notify an external system (via an HTTP post) about that fact. You could use http://httpbin.org or http://requestb.in/ to exercise this.
 `PUT /api/certificate/{cert_id}/active` 
