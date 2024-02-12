@@ -1,6 +1,7 @@
 # Cloudflare_Takehome
 to Run:
 `node server/server.js` 
+should have port opened on https://localhost/3000/
 
 Your solution must support:
 

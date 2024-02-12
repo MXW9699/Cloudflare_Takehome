@@ -7,7 +7,7 @@ app.use(express.json());
 
 /**********************ROUTE HANDLING************************************ */
 const userRouter = require('./router/userRouter');
-const certificateRouter = require('./router/certificateRouter.js');
+const certificateRouter = require('./router/certificateRouter');
 
 app.use('/api/user', userRouter);
 
