@@ -9,17 +9,15 @@ Your solution must support:
 - body {name:String email:String password: String}
 `DELETE /api/user/{user_id}`
 
-[X] Creating/Selecting Certificates
+[X] Creating Certificates
 `POST /api/certificate/{user_id}/`
 - body {body:String key:String}
-`DELETE /api/certificate/{cert_id}/`
-git 
 
 [X] Listing all of a Customer’s Active Certificates
 `GET /api/user/{user_id}/certificates?active=true`
 
 [X] Activating/Deactivating Certificates. If a certificate is either activated or de-activated, add the ability to notify an external system (via an HTTP post) about that fact. You could use http://httpbin.org or http://requestb.in/ to exercise this.
-`PUT /api/certificate/{cert_id}/active` 
+`PUT /api/certificate/{cert_id}/state` 
 - body {active: boolean} 
 
 [] Persistence (data must survive computer restarts)
