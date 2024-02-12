@@ -5,16 +5,13 @@ const certificateController = require('../controllers/certificateController.js')
 
 //creating a certificate
 router.post('/:user_id', certificateController.createCertificate, (req, res) =>
-  res.status(201).send('done')
+  res.status(201).json({certificate: res.locals.data})
 );
 
-//activating a certificate
-router.put('/Active', (req, res) => res.status(200).send('done'));
-
-//deactivating a certificate
-router.put('/Deactive', (req, res) => res.status(200).json());
+//activating/deactivating a certificate
+router.put('/:cert_id/state', certificateController.changeState, (req, res) => res.status(200).json(res.locals.data));
 
 //delete a certificate
-router.delete('Delete', (req, res) => res.status(200).json());
+router.delete('/:cert_id', certificateController.deleteCertificate, (req, res) => res.status(200).json());
 
 module.exports = router;
