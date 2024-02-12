@@ -15,9 +15,10 @@ const userSchema = new Schema({
 });
 
 const certificateSchema = new Schema({
-  title: { type: String, required: true },
+  body: { type: String, required: true },
   active: { type: Boolean, default: true },
-  userid: { type: Schema.Types.ObjectId, ref: 'Users', required: true },
+  key: { type: String, required: true },
+  user_id: { type: Schema.Types.ObjectId, ref: 'Users', required: true },
 });
 
 const sessionSchema = new Schema({

@@ -17,9 +17,22 @@ router.post(
   userController.verifyEmail,
   userController.login,
   (req, res) => {
-    if (res.locals.login) res.status(200).json({ data: true });
-    else res.status(400).json({ data: false });
+    res.status(200).json(res.locals.login);
   }
 );
+
+//get active certificates
+router.get(
+  '/:user_id/active',
+  userController.getUser,
+  userController.getActive,
+  (req, res) => {
+    res.status(200).json({ certificates: res.locals.data.certificates });
+  }
+);
+
+router.delete('/:user_id', userController.deleteUser, (req, res) => {
+  res.status(200).send('user successfully deleted');
+});
 
 module.exports = router;

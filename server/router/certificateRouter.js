@@ -1,14 +1,15 @@
 const express = require('express');
 const router = express.Router();
 
-//get list of User's Active Certificates
-router.get('/:UserID/Active', (req, res) => res.status(200).json());
+const certificateController = require('../controllers/certificateController.js');
 
 //creating a certificate
-router.post('/', (req, res) => res.status(200).json());
+router.post('/:user_id', certificateController.createCertificate, (req, res) =>
+  res.status(201).send('done')
+);
 
 //activating a certificate
-router.put('/Active', (req, res) => res.status(200).json());
+router.put('/Active', (req, res) => res.status(200).send('done'));
 
 //deactivating a certificate
 router.put('/Deactive', (req, res) => res.status(200).json());

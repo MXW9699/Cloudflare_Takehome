@@ -6,10 +6,10 @@ const app = express();
 app.use(express.json());
 
 /**********************ROUTE HANDLING************************************ */
-const userRouter = require('./router/userRouter')
-const certificateRouter = require('./router/certificateRouter.js')
+const userRouter = require('./router/userRouter');
+const certificateRouter = require('./router/certificateRouter.js');
 
-app.use('/api/user', userRouter)
+app.use('/api/user', userRouter);
 
 app.use('/api/certificate', certificateRouter);
 
