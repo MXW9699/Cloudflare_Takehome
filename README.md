@@ -9,7 +9,7 @@ Your solution must support:
 - body {name:String email:String password: String}
 `DELETE /api/user/{user_id}`
 
-[] Creating/Selecting Certificates
+[X] Creating/Selecting Certificates
 `POST /api/certificate/{user_id}/`
 - body {body:String key:String}
 `DELETE /api/certificate/{cert_id}/`
@@ -54,3 +54,7 @@ _id:
 active:
 body:
 key:
+
+***********************************************************
+future considerations:
+when storing the password, i would run it through a encoder like BCrypt to apply a salt and and encode, and store that result of that instead of the raw password.
