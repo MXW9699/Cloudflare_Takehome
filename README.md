@@ -1,4 +1,5 @@
 # Cloudflare_Takehome
+`npm install`
 to Run:
 `node server/server.js` 
 should have port opened on https://localhost/3000/
